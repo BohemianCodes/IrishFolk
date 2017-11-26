@@ -1,0 +1,13 @@
+<h1>Index</h1>
+
+<% @videos.each do |video| %>
+  <div class ="panel panel-warning">
+    <div class="panel-body">
+      <h3>
+        <%= link_to video.title, video_path(video) %>
+      </h3>
+      <small>Created <%= time_ago_in_words(video.created_at) %> ago
+      </small>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<%= form_for(@video, :html => {class: 'form-horizontal', role: 'form'}) do |form| %>
+  <div class="form-group">
+      <%= form.label :title, class: "control-label col-md-2" %>
+    <div class="col-md-8">
+    <%= form.text_field :title, class: "form-control", placeholder: "Video Title", autofocus: true %>
+    </div>
+  </div> <!--form group -->
+
+  <div class="form-group">
+      <%= form.label :url, class: "control-label col-md-2" %>
+    <div class="col-md-8">
+    <%= form.text_field :url, class: "form-control", placeholder: "Youtube URL" %>
+    </div>
+  </div> <!--form group -->
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <%= form.submit "Submit", class: "btn btn-default" %>
+      </div>
+    </div>
+  </div> <!--form group -->
+<% end %>
