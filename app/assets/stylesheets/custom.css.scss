@@ -2,6 +2,7 @@ $navbar-default-bg: #E98F4D;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
 
 html {
   position: relative;
@@ -9,7 +10,10 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 50px;
+  background-color: #E37D47;
+  background-image: asset-url("fire2.jpg");
+  background-size: cover;
 }
 
 #logo {
@@ -40,4 +44,18 @@ body {
 .center {
   text-align: center;
   clear: both;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  background-color: $beige;
+}
+
+#footer-container .text-muted {
+  margin: 15px 0;
+  color: black;
 }
