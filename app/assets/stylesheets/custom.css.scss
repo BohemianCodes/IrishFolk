@@ -1,2 +1,43 @@
+$navbar-default-bg: #E98F4D;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #00511A;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.navbar-nav a {
+  color: black !important;
+}
+
+.jumbotron {
+  background-image: asset-url("banjo.jpg");
+  background-size: cover;
+  height: 600px;
+  color: #262525;
+}
+
+.jumbotron h1,
+.jumbotron h2 {
+  text-shadow: 2px 2px white;
+}
+
+.center {
+  text-align: center;
+  clear: both;
+}
