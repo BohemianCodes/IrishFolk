@@ -1,13 +1,23 @@
 <h1>Index</h1>
 
-<% @videos.each do |video| %>
-  <div class ="panel panel-warning">
-    <div class="panel-body">
-      <h3>
-        <%= link_to video.title, video_path(video) %>
-      </h3>
-      <small>Created <%= time_ago_in_words(video.created_at) %> ago
-      </small>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+  <% @videos.each do |video| %>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <%= video.title %>
+          </a><br>
+          <small>Created <%= time_ago_in_words(video.created_at) %> ago
+          </small>
+        </h4>
+      </div>
+      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          <iframe id="ytplayer" type="text/html" width="640" height="360" src="<%= video.url %>"   frameborder="0"></iframe>
+        </div>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
