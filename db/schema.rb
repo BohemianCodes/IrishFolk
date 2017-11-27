@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126204705) do
+ActiveRecord::Schema.define(version: 20171127193155) do
 
   create_table "videos", force: :cascade do |t|
     t.string "title"
     t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "uid"
+    t.index ["uid"], name: "index_videos_on_uid"
   end
 
 end
