@@ -13,9 +13,9 @@
           </small>
         </h4>
       </div>
-      <div id="collapse<%=video.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=video.id%>">
+      <div id="collapse<%=video.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= video.id %>">
         <div class="panel-body">
-          <iframe>xxx</iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.uid %>" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
