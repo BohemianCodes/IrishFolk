@@ -4,18 +4,18 @@
 
   <% @videos.each do |video| %>
   <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
+    <div class="panel-heading" role="tab" id="heading<%=video.id%>">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=video.id%>" aria-expanded="false" aria-controls="collapse<%=video.id%>">
             <%= video.title %>
           </a><br>
           <small>Created <%= time_ago_in_words(video.created_at) %> ago
           </small>
         </h4>
       </div>
-      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div id="collapse<%=video.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%=video.id%>">
         <div class="panel-body">
-          <iframe id="ytplayer" type="text/html" width="640" height="360" src="<%= video.url %>"   frameborder="0"></iframe>
+          <iframe>xxx</iframe>
         </div>
       </div>
     </div>
