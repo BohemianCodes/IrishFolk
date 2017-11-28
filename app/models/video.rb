@@ -1,6 +1,8 @@
 class Video < ApplicationRecord
 
-before_create :set_video
+  belongs_to :user
+
+  before_create :set_video
 
   def set_video
     youtube = Yt::Video.new url: url
