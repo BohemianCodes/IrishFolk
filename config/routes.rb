@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root "pages#home"
 
   resources :videos
+  resources :users
   
 end

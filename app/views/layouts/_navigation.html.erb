@@ -9,11 +9,18 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to "Irish Folk", root_path, class: "navbar-brand", id: "logo" %>
-    </div>
+    </div> <!-- navbar header -->
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+        <li>
+            <% if user_signed_in? %>
+              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: 'btn btn-default', id: 'sign-button') %>
+            <% else %>
+              <%= link_to('Login', new_user_session_path, class: 'btn btn-default', id: 'sign-button') %>
+            <% end %>
+        </li>
         <li> <%= link_to 'All Songs', videos_path %> <span class="sr-only">(current)</span></li>
         <li> <%= link_to 'Add Song', new_video_path  %></li>
         <li class="dropdown">
