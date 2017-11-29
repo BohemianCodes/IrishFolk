@@ -3,7 +3,15 @@
   <h1>Irish Folk App</h1>
   <h2>Fáilte!</h2>
 
-  <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-danger btn-lg" %>
-  <%= link_to "Log In", new_user_session_path, class: "btn btn-success btn-lg" %>
+  <% if user_signed_in? %>
+
+    <%= link_to "Enter", videos_path, class: "btn btn-success btn-lg" %>
+
+  <% else %>
+
+    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-danger btn-lg" %>
+    <%= link_to "Log In", new_user_session_path, class: "btn btn-success btn-lg" %>
+
+  <% end %>
 
 </div> <!--jumbotron-->
