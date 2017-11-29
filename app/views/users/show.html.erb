@@ -1,0 +1,27 @@
+
+
+<!-- Shows form to update Username if name is nil-->
+<% if @user.name == nil %>
+  <h1> Please enter your name </h1>
+    <%= form_for(@user, :html => {class: 'form-horizontal', role: 'form'}) do |form| %>
+
+      <div class="form-group">
+          <%= form.label :name, class: "control-label col-md-2" %>
+        <div class="col-md-8">
+        <%= form.text_field :name, class: "form-control", placeholder: "Please enter your name", autofocus: true %>
+        </div>
+      </div> <!--form group -->
+        <div class="form-group">
+          <div class="col-md-offset-2 col-md-10">
+            <%= form.submit "Submit", class: "btn btn-default" %>
+          </div>
+        </div>
+      </div> <!--form group -->
+    <% end %>
+  <% else %>
+    <h1> Fáilte, <%= @user.name %>! </h1>
+      <div class="well">
+        <p> Username: <%= @user.name %></p>
+        <p> Email: <%= @user.email %></p>
+      </div>
+<% end %>
