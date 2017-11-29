@@ -22,8 +22,9 @@
       <div class="well">
         <p> Username: <%= @user.name %></p>
         <p> Email: <%= @user.email %></p>
+        <%= link_to "Daten ändern", edit_user_path %>
       </div>
-    <h2> Was möchtest du machen? </h2>
+    <h2> Was möchtest du tun? </h2>
     <%= link_to "Videos ansehen", videos_path, class:"btn btn-info"%>
     <%= link_to "Neues Video hinzufügen", new_video_path, class:"btn btn-primary"%>
 

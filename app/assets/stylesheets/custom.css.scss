@@ -54,6 +54,16 @@ body {
   visibility: hidden;
 }
 
+a#sign-button:hover {
+  background-color: green;
+}
+
+.login-status {
+  background-color: white;
+  display: inline-block;
+  float: right;
+}
+
 h1, h2 {
   color: #fcfcfc;
   margin-bottom: 20px;
