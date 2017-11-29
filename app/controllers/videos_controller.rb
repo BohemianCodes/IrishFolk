@@ -15,6 +15,7 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
+    @video.user = current_user
     if @video.save
       flash[:success] = "Video erfolgreich hinzugefügt!"
       redirect_to video_path(@video)

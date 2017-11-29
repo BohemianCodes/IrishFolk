@@ -9,7 +9,7 @@
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=video.id%>" aria-expanded="false" aria-controls="collapse<%=video.id%>">
             <%= video.title %>
           </a><br>
-          <small>Created <%= time_ago_in_words(video.created_at) %> ago
+          <small>Created <%= time_ago_in_words(video.created_at) %> ago by <%= video.user_id %>
           </small>
         </h4>
       </div>
