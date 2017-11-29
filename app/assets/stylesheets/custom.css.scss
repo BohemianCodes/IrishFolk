@@ -14,6 +14,8 @@ body {
   background-color: #E37D47;
   background-image: asset-url("fire2.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Lato';
 }
 
@@ -46,6 +48,10 @@ body {
 .center {
   text-align: center;
   clear: both;
+}
+
+.hydden{
+  visibility: hidden;
 }
 
 h1, h2 {
