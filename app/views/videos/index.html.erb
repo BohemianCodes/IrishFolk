@@ -3,19 +3,23 @@
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
   <% @videos.each do |video| %>
-  <div class="panel panel-default">
+  <div class="panel panel-warning">
     <div class="panel-heading" role="tab" id="heading<%=video.id%>">
-      <h4 class="panel-title">
+      <h3 class="panel-title">
         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<%=video.id%>" aria-expanded="false" aria-controls="collapse<%=video.id%>">
-            <%= video.title %>
-          </a><br>
-          <small>Created <%= time_ago_in_words(video.created_at) %> ago by <%= video.user_id %>
-          </small>
-        </h4>
+            <b><%= video.title %></b>
+        </a>
+      </h3><br>
+      <p>Created <%= time_ago_in_words(video.created_at) %> ago by <%= video.user.name %>
+      </p>
+
       </div>
       <div id="collapse<%=video.id%>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading<%= video.id %>">
         <div class="panel-body">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.uid %>" frameborder="0" allowfullscreen></iframe>
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.uid %>" frameborder="0" allowfullscreen>
+            </iframe>
+          </div>
         </div>
       </div>
     </div>
