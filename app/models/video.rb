@@ -14,4 +14,12 @@ class Video < ApplicationRecord
 
   end
 
+  def self.search(search_term)
+     if Rails.env.production?
+       Video.where("title ilike ?", "%#{search_term}%")
+     else
+       Video.where("title LIKE ?", "%#{search_term}%")
+     end
+  end
+
 end

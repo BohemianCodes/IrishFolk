@@ -3,8 +3,13 @@ class VideosController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @videos = Video.order('created_at DESC')
-
+    if params[:q]
+      search_term = params[:q]
+      @videos = Video.search(search_term)
+    # return our filtered list here
+    else
+      @videos = Video.order('created_at DESC')
+    end
   end
 
   def new
